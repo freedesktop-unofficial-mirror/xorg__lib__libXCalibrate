@@ -27,7 +27,7 @@ lib_LTLIBRARIES = libXcalibrate.la
 libXcalibrate_la_SOURCES = 	\
 	xcalibrate.c
 
-libXcalibrate_la_LIBADD = @X_LIBS@
+libXcalibrate_la_LIBADD = @XCALIBRATE_LIBS@
 
 libXcalibrateincludedir = $(includedir)/X11/extensions
 libXcalibrateinclude_HEADERS = xcalibrate.h 

@@ -1,0 +1,2 @@
+libXCalibrate is a library for performing touchscreen calibration with
+the kdrive tslib touchscreen driver.
