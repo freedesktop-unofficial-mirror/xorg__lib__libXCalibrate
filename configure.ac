@@ -7,7 +7,7 @@ AC_PROG_CC
 AC_PROG_LIBTOOL
 
 # Check for X
-PKG_CHECK_MODULES(XCALIBRATE, x11 xextproto xcalibrateproto)
+PKG_CHECK_MODULES(XCALIBRATE, x11 xext xextproto xcalibrateproto)
 		  
 AC_OUTPUT([Makefile
            xcalibrate.pc])
