@@ -43,4 +43,6 @@ Status XCalibrateQueryVersion (Display *dpy,
 
 Status XCalibrateSetRawMode (Display *dpy, Bool enable);
 
+Status XCalibrateScreenToCoord (Display *dpy, int *x, int *y);
+
 #endif

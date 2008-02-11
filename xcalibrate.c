@@ -227,3 +227,29 @@ XCalibrateSetRawMode (Display *dpy, Bool enable)
   SyncHandle ();
   return 0;
 }
+
+Status 
+XCalibrateScreenToCoord (Display *dpy, int *x, int *y)
+{
+  XExtDisplayInfo		*info = XCalibrateFindDisplay (dpy);
+  xXCalibrateScreenToCoordReq *req;
+  xXCalibrateScreenToCoordReply	rep;
+  LockDisplay (dpy);
+  GetReq (XCalibrateScreenToCoord, req);
+  req->reqType = info->codes->major_opcode;
+  req->xCalibrateReqType = X_XCalibrateScreenToCoord;
+  req->x = *x;
+  req->y = *y;
+  if (!_XReply (dpy, (xReply *) &rep, 0, xFalse)) 
+    {
+      UnlockDisplay (dpy);
+      SyncHandle ();
+      return 1;
+    }
+  *x = rep.x;
+  *y = rep.y;
+  UnlockDisplay (dpy);
+  SyncHandle ();
+  return 0;
+}
+
